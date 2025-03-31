@@ -4,9 +4,14 @@ namespace Deg540\StringCalculatorPHP;
 
 class StringCalculator
 {
+
+    public function __construct()
+    {
+    }
+
     public function add(string $numbers): int
     {
-        if($numbers === ""){
+        if($this->isEmpty($numbers)){
             return 0;
         }
         $add = 0;
@@ -16,5 +21,10 @@ class StringCalculator
             $number = strtok(",\n");
         }
         return $add;
+    }
+
+    public function isEmpty(string $numbers): bool
+    {
+        return $numbers === "";
     }
 }

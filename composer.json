@@ -7,8 +7,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Deg540\\DockerPHPBoilerplate\\": "src",
-            "Deg540\\DockerPHPBoilerplate\\Test\\": "tests"
+            "Deg540\\StringCalculatorPHP\\": "src",
+            "Deg540\\StringCalculatorPHP\\Test\\": "tests"
         }
     },
     "require": {

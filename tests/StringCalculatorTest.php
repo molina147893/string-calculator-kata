@@ -32,11 +32,21 @@ final class StringCalculatorTest extends TestCase
     /**
      * @test
      */
-    public function givenNumber1And2Returns3()
+    public function givenNumbers1And2Returns3()
     {
         $stringCalculator = new StringCalculator();
 
         $this->assertEquals(3, $stringCalculator->add("1,2"));
+    }
+
+    /**
+     * @test
+     */
+    public function givenMultipleNumbersReturnsItsAddition()
+    {
+        $stringCalculator = new StringCalculator();
+
+        $this->assertEquals(10, $stringCalculator->add("1,2,2,3,2"));
     }
 
 

@@ -49,5 +49,15 @@ final class StringCalculatorTest extends TestCase
         $this->assertEquals(10, $stringCalculator->add("1,2,2,3,2"));
     }
 
+    /**
+     * @test
+     */
+    public function givenBreakLineAsSeparatorReturnsResult()
+    {
+        $stringCalculator = new StringCalculator();
+
+        $this->assertEquals(6, $stringCalculator->add("1\n2,3"));
+    }
+
 
 }

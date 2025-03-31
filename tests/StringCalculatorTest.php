@@ -16,9 +16,7 @@ final class StringCalculatorTest extends TestCase
     {
         $stringCalculator = new StringCalculator();
 
-        $result = $stringCalculator->add("");
-
-        $this->assertEquals(0, $result);
+        $this->assertEquals(0, $stringCalculator->add(""));
     }
 
     /**
@@ -28,9 +26,7 @@ final class StringCalculatorTest extends TestCase
     {
         $stringCalculator = new StringCalculator();
 
-        $result = $stringCalculator->add("1");
-
-        $this->assertEquals(1, $result);
+        $this->assertEquals(1, $stringCalculator->add("1"));
     }
 
     /**
@@ -40,9 +36,7 @@ final class StringCalculatorTest extends TestCase
     {
         $stringCalculator = new StringCalculator();
 
-        $result = $stringCalculator->add("1,2");
-
-        $this->assertEquals(3, $result);
+        $this->assertEquals(3, $stringCalculator->add("1,2"));
     }
 
 

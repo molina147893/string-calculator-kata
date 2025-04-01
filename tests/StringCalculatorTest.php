@@ -42,7 +42,7 @@ final class StringCalculatorTest extends TestCase
     /**
      * @test
      */
-    public function givenMultipleNumbersReturnsItsAddition()
+    public function givenMultipleNumbersReturnsItsSum()
     {
         $stringCalculator = new StringCalculator();
 
@@ -52,11 +52,21 @@ final class StringCalculatorTest extends TestCase
     /**
      * @test
      */
-    public function givenBreakLineAsSeparatorReturnsResult()
+    public function givenNumbersSeparatedByBreakLineReturnsItsSum()
     {
         $stringCalculator = new StringCalculator();
 
         $this->assertEquals(6, $stringCalculator->add("1\n2,3"));
+    }
+
+    /**
+     * @test
+     */
+    public function givenNumbersSeparatedByCustomDelimiterReturnsItsSum()
+    {
+        $stringCalculator = new StringCalculator();
+
+        $this->assertEquals(3, $stringCalculator->add("//&\n1&2"));
     }
 
 

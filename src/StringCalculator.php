@@ -18,9 +18,7 @@ class StringCalculator
             return 0;
         }
         if($this->hasCustomDelimiter($numbers)){
-            $delimiter = $numbers[2];
-            $numbers = substr($numbers, 4);
-            $numbers = str_replace($delimiter, ",", $numbers);
+            $numbers = $this->replaceCustomDelimiter($numbers);
         }
         $add = 0;
         $negatives = array();
@@ -33,7 +31,7 @@ class StringCalculator
             $add += $value;
             $number = strtok(",\n");
         }
-        if(count($negatives) > 0){
+        if($this->thereAreNegatives($negatives)){
             throw new Exception('negativos no soportados: ' . implode(", ", $negatives));
         }
         return $add;
@@ -47,5 +45,18 @@ class StringCalculator
     public function hasCustomDelimiter(string $numbers): bool
     {
         return str_starts_with($numbers, "//");
+    }
+
+    public function replaceCustomDelimiter(string $numbers): string|array
+    {
+        $delimiter = $numbers[2];
+        $numbers = substr($numbers, 4);
+        $numbers = str_replace($delimiter, ",", $numbers);
+        return $numbers;
+    }
+    
+    public function thereAreNegatives(array $negatives): bool
+    {
+        return count($negatives) > 0;
     }
 }
